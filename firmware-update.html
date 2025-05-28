@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BIOS Firmware Update</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 max-w-3xl mx-auto py-10 px-6">
+  <img src="https://drive.google.com/uc?export=view&id=1euOvWYe5uDbPNXYqbag8OIsptnTTfkTE" alt="Panasonic Logo" class="w-40 mb-4" />
+  <div class="mb-4"><a href="index.html" class="text-blue-600 hover:underline">&larr; Back to Home</a></div>
+  <h1 class="text-2xl font-bold mb-4">GIGAIPC H310AI BIOS F5 Firmware UPDATE</h1>
+  <a class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-2" href="https://drive.google.com/drive/folders/1nOAeWrUjBncPwPonWWiDYfkijRO6LhWy?usp=sharing" target="_blank">Open Firmware Folder</a>
+  <br />
+  <a class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4" href="https://drive.google.com/file/d/1iCUJUDw0HxV0vtUohJaDAUAFQQSprxAN/view?usp=sharing" target="_blank">View Instruction (PDF)</a>
+  <h2 class="text-xl font-semibold mt-6 mb-2">Instructions Summary</h2>
+  <ol class="list-decimal list-inside space-y-1 text-left">
+    <li>Format USB to FAT32.</li>
+    <li>Copy BIOS file and flash tool to USB root directory.</li>
+    <li>Enter BIOS using [DEL] key on boot.</li>
+    <li>Go to Save & Exit &gt; Launch EFI Shell.</li>
+    <li>Run <code class="bg-gray-100 px-1 py-0.5 rounded">fs0:\flash.bat</code></li>
+    <li>Do not power off. System will reboot automatically.</li>
+  </ol>
+  <p class="italic text-sm text-gray-500 mt-4">Please ensure stable power during the update process.</p>
+</body>
+</html>
