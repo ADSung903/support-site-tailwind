@@ -3,29 +3,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manual Downloads</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manuals</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800 max-w-3xl mx-auto py-10 px-6">
-  
-<a href="index.html">
-  <a href="index.html"><img src="panasonic-logo.png"   alt="Panasonic Logo" class="w-40 mb-6" />
-  <h1 class="text-2xl font-bold mb-4">Manual Downloads</h1>
-  <ul class="space-y-4">
-    <li>
-      <a href="https://drive.google.com/file/d/1O9yIhaw6CWYRd0hKYaWwKLvf4ji0FEPv/view?usp=drive_link" target="_blank"
-         class="text-blue-600 hover:underline">K32Ti5PSCN_Service Manual</a>
-    </li>
-    <li>
-      <a href="https://drive.google.com/file/d/1-MS5rGMuj3ShKTFyVYVwu3Urmak_wAwA/view?usp=drive_link" target="_blank"
-         class="text-blue-600 hover:underline">KT32i5PSCN_Training_Lite</a>
-    </li>
-  </ul>
-  
-<footer class="text-center text-sm text-gray-500 mt-10 border-t pt-4">
-  &copy; 2025 Panasonic Support Team | All rights reserved.
-</footer>
+<body class="flex flex-col min-h-screen">
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 text-white w-64 hidden md:block">
+      <div class="p-4 text-center border-b border-gray-700">
+        <a href="index.html">
+          <img src="panasonic-logo.png" alt="Panasonic Logo" class="mx-auto w-32" />
+        </a>
+      </div>
+      <nav class="p-4 space-y-2">
+        <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-700">Home</a>
+        <a href="firmware-update.html" class="block px-4 py-2 rounded hover:bg-gray-700">BIOS Firmware Update</a>
+        <a href="troubleshooting.html" class="block px-4 py-2 rounded hover:bg-gray-700">Troubleshooting</a>
+        <a href="manual.html" class="block px-4 py-2 rounded hover:bg-gray-700">Manuals</a>
+        <a href="driver.html" class="block px-4 py-2 rounded hover:bg-gray-700">Drivers</a>
+        <a href="contact.html" class="block px-4 py-2 rounded hover:bg-gray-700">Contact</a>
+      </nav>
+    </aside>
 
+    <!-- Main content -->
+    <main class="flex-1 p-6">
+      <div class="md:hidden mb-4">
+        <!-- Mobile menu -->
+        <button id="menuToggle" class="text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div id="mobileMenu" class="hidden bg-white mt-2 border rounded shadow">
+          <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+          <a href="firmware-update.html" class="block px-4 py-2 hover:bg-gray-100">BIOS Firmware Update</a>
+          <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+          <a href="manual.html" class="block px-4 py-2 hover:bg-gray-100">Manuals</a>
+          <a href="driver.html" class="block px-4 py-2 hover:bg-gray-100">Drivers</a>
+          <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+        </div>
+      </div>
+
+      <h1 class='text-2xl font-bold mb-4'>Manual Downloads</h1><ul class='list-disc pl-5'><li><a href='#' class='text-blue-600 underline'>K32Ti5PSCN Service Manual</a></li><li><a href='#' class='text-blue-600 underline'>KT32i5PSCN Training Lite</a></li></ul>
+    </main>
+  </div>
+
+  <footer class="text-center text-sm text-gray-500 mt-auto p-4 border-t">
+    &copy; 2025 Panasonic Support Team | All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {{
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }});
+  </script>
 </body>
 </html>
