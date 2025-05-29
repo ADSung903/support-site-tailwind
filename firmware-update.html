@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +17,7 @@
       </div>
       <nav class="p-4 space-y-2">
         <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-700">Home</a>
-        <a href="firmware-update.html" class="block px-4 py-2 rounded hover:bg-gray-700">BIOS Firmware Update</a>
+        <a href="firmware-update.html" class="block px-4 py-2 bg-gray-900 rounded">BIOS Firmware Update</a>
         <a href="troubleshooting.html" class="block px-4 py-2 rounded hover:bg-gray-700">Troubleshooting</a>
         <a href="manual.html" class="block px-4 py-2 rounded hover:bg-gray-700">Manuals</a>
         <a href="driver.html" class="block px-4 py-2 rounded hover:bg-gray-700">Drivers</a>
@@ -29,7 +28,6 @@
     <!-- Main content -->
     <main class="flex-1 p-6">
       <div class="md:hidden mb-4">
-        <!-- Mobile menu -->
         <button id="menuToggle" class="text-gray-800 focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -37,15 +35,20 @@
         </button>
         <div id="mobileMenu" class="hidden bg-white mt-2 border rounded shadow">
           <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-          <a href="firmware-update.html" class="block px-4 py-2 hover:bg-gray-100">BIOS Firmware Update</a>
+          <a href="firmware-update.html" class="block px-4 py-2 bg-gray-100">BIOS Firmware Update</a>
           <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
           <a href="manual.html" class="block px-4 py-2 hover:bg-gray-100">Manuals</a>
           <a href="driver.html" class="block px-4 py-2 hover:bg-gray-100">Drivers</a>
           <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
         </div>
       </div>
+      
+<h1 class="text-2xl font-bold mb-4">GIGAIPC H310AI BIOS F5 Firmware UPDATE</h1>
+<div class="space-y-4">
+  <a class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" href="https://drive.google.com/drive/folders/1nOAeWrUjBncPwPonWWiDYfkijRO6LhWy?usp=sharing" target="_blank">Open Firmware Folder</a>
+  <a class="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700" href="https://drive.google.com/file/d/1iCUJUDw0HxV0vtUohJaDAUAFQQSprxAN/view?usp=sharing" target="_blank">View Instruction (PDF)</a>
+</div>
 
-      <h1 class='text-2xl font-bold mb-4'>BIOS Firmware Update</h1><p class='text-gray-600'>Instructions and files for updating BIOS firmware.</p>
     </main>
   </div>
 
@@ -54,10 +57,10 @@
   </footer>
 
   <script>
-    document.getElementById('menuToggle').addEventListener('click', function () {{
+    document.getElementById('menuToggle').addEventListener('click', function () {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('hidden');
-    }});
+    });
   </script>
 </body>
 </html>
