@@ -2,33 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white text-gray-800 max-w-3xl mx-auto py-10 px-6">
-  
-  <a href="index.html">
-    <img src="panasonic-logo.png" alt="Panasonic Logo" class="w-40 mb-6" />
-  </a>
-  
-  <h1 class="text-2xl font-bold mb-4">Contact & Request Form</h1>
-  <p class="mb-4">Please use the form below to submit your support request or document needs.</p>
+<body class="flex flex-col min-h-screen">
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 text-white w-64 hidden md:block">
+      <div class="p-4 text-center border-b border-gray-700">
+        <a href="index.html">
+          <img src="panasonic-logo.png" alt="Panasonic Logo" class="mx-auto w-32" />
+        </a>
+      </div>
+      <nav class="p-4 space-y-2">
+        <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-700">Home</a>
+        <a href="firmware-update.html" class="block px-4 py-2 rounded hover:bg-gray-700">BIOS Firmware Update</a>
+        <a href="troubleshooting.html" class="block px-4 py-2 rounded hover:bg-gray-700">Troubleshooting</a>
+        <a href="manual.html" class="block px-4 py-2 rounded hover:bg-gray-700">Manuals</a>
+        <a href="driver.html" class="block px-4 py-2 rounded hover:bg-gray-700">Drivers</a>
+        <a href="contact.html" class="block px-4 py-2 rounded hover:bg-gray-700">Contact</a>
+      </nav>
+    </aside>
 
-  <!-- ✅ Google Form 嵌入 -->
-  <div class="mb-8">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJ_UHI-PxVt1YNZ668eltIRJQAHcE2kMa1HuLwRLloMTn0Pw/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <!-- Main content -->
+    <main class="flex-1 p-6">
+      <div class="md:hidden mb-4">
+        <!-- Mobile menu -->
+        <button id="menuToggle" class="text-gray-800 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <div id="mobileMenu" class="hidden bg-white mt-2 border rounded shadow">
+          <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+          <a href="firmware-update.html" class="block px-4 py-2 hover:bg-gray-100">BIOS Firmware Update</a>
+          <a href="troubleshooting.html" class="block px-4 py-2 hover:bg-gray-100">Troubleshooting</a>
+          <a href="manual.html" class="block px-4 py-2 hover:bg-gray-100">Manuals</a>
+          <a href="driver.html" class="block px-4 py-2 hover:bg-gray-100">Drivers</a>
+          <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+        </div>
+      </div>
+
+      <h1 class='text-2xl font-bold mb-4'>Contact Form</h1>
+      <p class="mb-4">Please use the form below to request support.</p>
+
+      <!-- ✅ Google Form -->
+      <div class="mb-10">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJ_UHI-PxVt1YNZ668eltIRJQAHcE2kMa1HuLwRLloMTn0Pw/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+
+      <!-- ✅ Google Sheet -->
+      <div class="mb-10">
+        <h2 class="text-xl font-semibold mb-2">Submitted Records</h2>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5vb7DmjhxOCIv9nq3CjnaO8rHJ43IF0zhmPvfPpzkV8pIJNzdj1MZLep5tH63P2a-4VipHszQRiOb/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>
+      </div>
+    </main>
   </div>
 
-  <!-- ✅ Google Sheet 嵌入 -->
-  <div class="mb-8">
-    <h2 class="text-xl font-semibold mb-2">Submitted Records (Spreadsheet View)</h2>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5vb7DmjhxOCIv9nq3CjnaO8rHJ43IF0zhmPvfPpzkV8pIJNzdj1MZLep5tH63P2a-4VipHszQRiOb/pubhtml?widget=true&amp;headers=false" width="100%" height="600" frameborder="0"></iframe>
-  </div>
-
-  <footer class="text-center text-sm text-gray-500 mt-10 border-t pt-4">
+  <footer class="text-center text-sm text-gray-500 mt-auto p-4 border-t">
     &copy; 2025 Panasonic Support Team | All rights reserved.
   </footer>
 
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
