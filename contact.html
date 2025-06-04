@@ -44,18 +44,12 @@
         </div>
       </div>
 
-      <h1 class='text-2xl font-bold mb-4'>Contact Form</h1>
+      <h1 class="text-2xl font-bold mb-4">Contact Form</h1>
       <p class="mb-4">Please use the form below to request support.</p>
 
-<div class="mb-8">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJ_UHI-PxVt1YNZ668eltIRJQAHcE2kMa1HuLwRLloMTn0Pw/viewform" 
-     target="_blank"
-     class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded shadow">
-    ➕ Click here to open the support form (with file upload)
-  </a>
-  <p class="text-sm text-gray-500 mt-2">* Form opens in a new tab. Google sign-in is required for file uploads.</p>
-</div>
-
+      <!-- Dynamic Form & Sheet from Google Apps Script -->
+      <div id="formContainer" class="mb-10"></div>
+      <div id="sheetContainer" class="mb-10"></div>
     </main>
   </div>
 
@@ -68,6 +62,25 @@
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('hidden');
     });
+
+    // 🚀 Dynamic loading from Apps Script
+    fetch("https://script.google.com/macros/s/AKfycbyVN2e8Y3yl2udq7gLEqnBemrJ6Hel1KIh4P_4IQ5-xtPf8m3n0Ml-sYrApj3p_dS3b/exec")
+      .then(res => res.json())
+      .then(config => {
+        // Insert form
+        document.getElementById("formContainer").innerHTML = `
+          <iframe src="${config.formUrl}" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        `;
+
+        // Insert sheet
+        document.getElementById("sheetContainer").innerHTML = `
+          <h2 class="text-xl font-semibold mb-2">Submitted Records</h2>
+          <iframe src="${config.sheetUrl}" width="100%" height="600" frameborder="0"></iframe>
+        `;
+      })
+      .catch(err => {
+        document.getElementById("formContainer").innerHTML = `<p class="text-red-600">Failed to load dynamic content. Please check configuration.</p>`;
+      });
   </script>
 </body>
 </html>
