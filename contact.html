@@ -52,34 +52,29 @@
       <div id="sheetContainer" class="mb-10"></div>
     </main>
   </div>
-
   <footer class="text-center text-sm text-gray-500 mt-auto p-4 border-t">
     &copy; 2025 Panasonic Support Team | All rights reserved.
   </footer>
 
+  <!-- JavaScript: 從 Google Apps Script 載入設定 -->
   <script>
-    document.getElementById('menuToggle').addEventListener('click', function () {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    });
-
-    // 🚀 Dynamic loading from Apps Script
     fetch("https://script.google.com/macros/s/AKfycbyVN2e8Y3yl2udq7gLEqnBemrJ6Hel1KIh4P_4IQ5-xtPf8m3n0Ml-sYrApj3p_dS3b/exec")
       .then(res => res.json())
       .then(config => {
-        // Insert form
+        // 插入表單按鈕
         document.getElementById("formContainer").innerHTML = `
-          <iframe src="${config.formUrl}" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <a href="${config.formUrl}" target="_blank"
+            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded shadow">
+            ➕ Click here to open the support form
+          </a>
+          <p class="text-sm text-gray-500 mt-2">* The form opens in a new tab. Sign-in may be required for file uploads.</p>
         `;
 
-        // Insert sheet
+        // 插入試算表 iframe
         document.getElementById("sheetContainer").innerHTML = `
           <h2 class="text-xl font-semibold mb-2">Submitted Records</h2>
           <iframe src="${config.sheetUrl}" width="100%" height="600" frameborder="0"></iframe>
         `;
-      })
-      .catch(err => {
-        document.getElementById("formContainer").innerHTML = `<p class="text-red-600">Failed to load dynamic content. Please check configuration.</p>`;
       });
   </script>
 </body>
